@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Users, Clock, DollarSign, FileCheck, AlertTriangle, TrendingUp, Calendar, MapPin, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import { AttendanceOverview } from "@/components/dashboard/AttendanceOverview";
 import { RecentActivity } from "@/components/dashboard/RecentActivity";
@@ -122,41 +123,45 @@ const Index = () => {
 
         {/* Key Features Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 fade-in">
-          <Card className="hover-lift cursor-pointer border-l-4 border-l-primary group">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center text-lg group-hover:text-primary transition-colors">
-                <Clock className="w-5 h-5 mr-2 text-primary" />
-                Smart Attendance
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-3">
-                Biometric integration with real-time tracking and anomaly detection
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-primary">98.2%</span>
-                <span className="text-xs text-muted-foreground">Accuracy Rate</span>
-              </div>
-            </CardContent>
-          </Card>
+          <Link to="/attendance">
+            <Card className="hover-lift cursor-pointer border-l-4 border-l-primary group">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg group-hover:text-primary transition-colors">
+                  <Clock className="w-5 h-5 mr-2 text-primary" />
+                  Smart Attendance
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Biometric integration with real-time tracking and anomaly detection
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-primary">98.2%</span>
+                  <span className="text-xs text-muted-foreground">Accuracy Rate</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="hover-lift cursor-pointer border-l-4 border-l-accent group">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center text-lg group-hover:text-accent transition-colors">
-                <Calendar className="w-5 h-5 mr-2 text-accent" />
-                Shift Planning
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-3">
-                Automated scheduling with intelligent workforce allocation
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-accent">24/7</span>
-                <span className="text-xs text-muted-foreground">Coverage</span>
-              </div>
-            </CardContent>
-          </Card>
+          <Link to="/shifts">
+            <Card className="hover-lift cursor-pointer border-l-4 border-l-accent group">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg group-hover:text-accent transition-colors">
+                  <Calendar className="w-5 h-5 mr-2 text-accent" />
+                  Shift Planning
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Automated scheduling with intelligent workforce allocation
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-accent">24/7</span>
+                  <span className="text-xs text-muted-foreground">Coverage</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
 
           <Card className="hover-lift cursor-pointer border-l-4 border-l-primary group">
             <CardHeader className="pb-3">
@@ -176,23 +181,25 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="hover-lift cursor-pointer border-l-4 border-l-accent group">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center text-lg group-hover:text-accent transition-colors">
-                <FileCheck className="w-5 h-5 mr-2 text-accent" />
-                Compliance Hub
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-3">
-                Automated compliance tracking and audit-ready documentation
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-accent">100%</span>
-                <span className="text-xs text-muted-foreground">Compliance</span>
-              </div>
-            </CardContent>
-          </Card>
+          <Link to="/employees">
+            <Card className="hover-lift cursor-pointer border-l-4 border-l-accent group">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg group-hover:text-accent transition-colors">
+                  <FileCheck className="w-5 h-5 mr-2 text-accent" />
+                  Employee Database
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Centralized employee records and workforce management
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-accent">2,543</span>
+                  <span className="text-xs text-muted-foreground">Employees</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </div>
     </div>
