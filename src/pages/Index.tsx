@@ -22,11 +22,14 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover-scale">
-                <span className="text-primary-foreground font-bold text-xl">Y</span>
+              <div className="hover-scale">
+                <img 
+                  src="/lovable-uploads/43b71453-b912-4268-9da6-bb40940e3ca8.png" 
+                  alt="Yallivo Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-2xl font-bold text-foreground">Yallivo HRMS</h1>
                 <p className="text-sm text-muted-foreground">Precision Workforce. Factory-Ready HR.</p>
               </div>
             </div>
