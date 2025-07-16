@@ -11,10 +11,10 @@ import {
   UserX, 
   Calendar as CalendarIcon,
   Download,
-  Filter,
-  User
+  Filter
 } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { AppHeader } from "@/components/AppHeader";
+import { QuickNav } from "@/components/QuickNav";
 
 const mockAttendanceData = [
   {
@@ -74,34 +74,11 @@ const Attendance = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 lg:px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="hover-scale">
-                <img 
-                  src="/lovable-uploads/43b71453-b912-4268-9da6-bb40940e3ca8.png" 
-                  alt="Yallivo Logo" 
-                  className="h-10 w-auto"
-                />
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-sm text-muted-foreground">Attendance Tracking</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <ThemeToggle />
-              <Button variant="outline" size="sm">
-                <User className="h-4 w-4 mr-2" />
-                HR Admin
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <AppHeader title="Attendance Dashboard" subtitle="Real-time attendance tracking and reporting" />
 
       <main className="container mx-auto px-4 lg:px-6 py-8">
+        <QuickNav />
+        
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
           <div>

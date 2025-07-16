@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Search, Plus, Filter, MoreHorizontal, User, Phone, MapPin } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Search, Plus, Filter, MoreHorizontal, Phone, MapPin, Eye, Edit, Trash2 } from "lucide-react";
+import { AppHeader } from "@/components/AppHeader";
+import { QuickNav } from "@/components/QuickNav";
 
 const mockEmployees = [
   {
@@ -70,34 +71,11 @@ const Employees = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 lg:px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="hover-scale">
-                <img 
-                  src="/lovable-uploads/43b71453-b912-4268-9da6-bb40940e3ca8.png" 
-                  alt="Yallivo Logo" 
-                  className="h-10 w-auto"
-                />
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-sm text-muted-foreground">Employee Management</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <ThemeToggle />
-              <Button variant="outline" size="sm">
-                <User className="h-4 w-4 mr-2" />
-                HR Admin
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <AppHeader title="Employee Database" subtitle="Manage your workforce records and information" />
 
       <main className="container mx-auto px-4 lg:px-6 py-8">
+        <QuickNav />
+        
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
           <div>
@@ -143,9 +121,17 @@ const Employees = () => {
                       <CardDescription>{employee.id}</CardDescription>
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm">
-                    <MoreHorizontal className="h-4 w-4" />
-                  </Button>
+                  <div className="flex gap-1">
+                    <Button variant="ghost" size="sm">
+                      <Eye className="h-3 w-3" />
+                    </Button>
+                    <Button variant="ghost" size="sm">
+                      <Edit className="h-3 w-3" />
+                    </Button>
+                    <Button variant="ghost" size="sm">
+                      <Trash2 className="h-3 w-3" />
+                    </Button>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent>
